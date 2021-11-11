@@ -1,0 +1,19 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block conteudo %}
+			<div class="page-header text-center py-3">
+            	<h1>Relatorios</h1>
+        	</div>
+			<div class="row">
+				<div class="col-sm-4">
+					{% if livro.capa_livro == '' %}
+							<img src="{% static 'img/livro.png' %}" class="card-img-top" alt="...">
+						{% else %}
+							<img src="{{ livro.capa_livro.url }}" class="card-img-top" alt="...">
+						{% endif %}
+				</div>
+				<div class="col-sm-8">
+				    <p class="h4"><strong>Nome: </strong>{{ livro.nome }}</p>
+				</div>
+			</div>
+{% endblock %}

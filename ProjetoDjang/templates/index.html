@@ -1,0 +1,29 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block conteudo %}
+			<div class="page-header text-center py-3">
+            	<h1>Relatórios de estágio</h1>
+        	</div>
+			<div class="row">
+				{% for relatorios in relatorios %}
+				<div class="col-sm-4">
+			        <div style="width: 18rem;">
+						<table>
+							<tr>
+								<th>Autor:</th>
+								<th>Orientador:</th>
+								<th>Curso:</th>
+							</tr>
+							<tr>
+							  <th> {{ relatorio.autor }}</th>
+							  <th> {{ relatorio.orientador }}</th>
+							  <th> {{ relatorio.curso }}</th>
+							</tr>
+						</table>
+						    <tr href="{% url 'relatorio' relatorio.id %}" class="btn btn-primary">Visualizar</tr>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+{% endblock %}
